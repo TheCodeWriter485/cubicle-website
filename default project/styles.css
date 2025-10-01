@@ -1,0 +1,91 @@
+body {
+    background: white;
+    overflow: hidden;
+    text-align: center;
+
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    text-align: center;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #f8eeec;
+  overflow: hidden;
+  width: 85%;   
+  margin: 0 auto;/* full width of the page */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  text-align: center;
+  height: 10px;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 0 auto;
+  background-color: #fff9e3;
+  
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: palegoldenrod;
+  color: #f3ead3;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: gold;
+}
+
+.box {
+  background-color: chocolate;
+  width: 85%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  font-size: 17px;
+  overflow: hidden;
+}
+
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 10s linear infinite;
+    padding: 10px;
+    width: 75%;
+}
+
+
+@keyframes marquee {
+    from {
+        transform: translateX(85%);
+    }
+    to {
+        transform: translateX(-85%);
+    }
+}
+
+.marquee-content {
+    animation-play-state: paused;
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 25%;
+}
+.middle{
+  width: 50%;
+}
+
+.right {
+  width: 25%;
+}
