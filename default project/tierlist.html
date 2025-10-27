@@ -3,16 +3,49 @@
     <head>
         <meta charset="utf-8" />
         <title>Phoenix editor</title>
-        <link rel="stylesheet" href="styles.css" />
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="tierliststyle.css" />
+        <!-- UI handling script -->
+  <script>
+    async function loadPokemonList() {
+      const response = await fetch("team.txt");
+      const text = await response.text();
+      const names = text.split(/\r?\n/).filter(line => line.trim() !== "");
+      let tier = "20";
+
+      for (const name of names) {
+        console.log(name);
+        if (!isNaN(name)){
+          tier = name;
+          console.log(tier);
+        }
+        else{
+          const data = await getPokemonData(name);
+          if (data) createPokemonCard(data, tier);
+        }
+      }
+    }
+
+    function createPokemonCard(pokemon, tier) {
+      const container = document.getElementById(tier);
+      const card = document.createElement("div");
+      card.className = "pokemon-card";
+
+      card.innerHTML = `
+        <img src="${pokemon.sprite}" alt="${pokemon.name}">
+        <h3>${pokemon.name}</h3>
+      `;
+
+      container.appendChild(card);
+    }
+  </script>
     </head>
 <!DOCTYPE html>
 <html>
-  <body>
-    <img src="images/Cubical.png" width = 16% style = "margin: 5px"/>
+  <body onload="loadPokemonList()"> 
+    <div class="head-container" position: fixed;  style= "top: 0; background-color: white; width: 100vw; " >
+    <img src="images/Cubical.png" width = 16% style = "margin: 5px";/>
     
-<! my marquee >
-<div class = "box">
+    <div class = "box">
   <marquee id="buttonscroll" style="margin-top:10px;" scrollamount="5" scrolldelay="1" loop="infinite" ;="">
       <a href="https://sea-of-colors.neocities.org//index.html"
         ><img src="https://file.garden/Zhv5YDnnzDVjn52y/button.png"
@@ -43,18 +76,46 @@
 
   </marquee>
     </div>
-  
-<! my nav >
-<div class="topnav" style="border-color: red;">
-  <a  href="index.html">Home</a>
+    <div class="topnav" style="border-color: red;">
+                                                                                                                                                                                                                  <a  href="index.html">Home</a>
   <a  href="#news">News</a>
   <a  href="#contact">Teams</a>
   <a  class="active" style ="color: black;border-radius: 8px;" href="#about">Tier List</a>
   <a  href="#contact">History</a>
 </div>
+      </div>
+    
+<div class="flex-container" style= "margin-top: 280px;">
+  <div id="20" class="flex-child magenta"><h2>20</h2></div>
+  <div id="19" class="flex-child magenta"><h2>19</h2></div>
+  <div id="18" class="flex-child magenta"><h2>18</h2></div>
+  <div id="17" class="flex-child magenta"><h2>17</h2></div>
+  <div id="16" class="flex-child magenta"><h2>16</h2></div>
+  <div id="15" class="flex-child magenta"><h2>15</h2></div>
+  <div id="14" class="flex-child magenta"><h2>14</h2></div>
+  <div id="13" class="flex-child magenta"><h2>13</h2></div>
+  <div id="12" class="flex-child magenta"><h2>12</h2></div>
+  <div id="11" class="flex-child magenta"><h2>11</h2></div>
+  <div id="10" class="flex-child magenta"><h2>10</h2></div>
+  <div id="9" class="flex-child magenta"><h2>9</h2></div>
+  <div id="8" class="flex-child magenta"><h2>8</h2></div>
+  <div id="7" class="flex-child magenta"><h2>7</h2></div>
+  <div id="6" class="flex-child magenta"><h2>6</h2></div>
+  <div id="5" class="flex-child magenta"><h2>5</h2></div>
+  <div id="4" class="flex-child magenta"><h2>4</h2></div>
+  <div id="3" class="flex-child magenta"><h2>3</h2></div>
+  <div id="2" class="flex-child magenta"><h2>2</h2></div>
+  <div id="1" class="flex-child magenta"><h2>1</h2></div>
+  <div id="0" class="flex-child magenta"><h2>0</h2></div>
+</div>
 
 
-  </body>
-</html>
+  <!-- Load pokeapi-js-wrapper -->
+  <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
+
+  <!-- Load our separate fetcher script -->
+  <script src="script.js"></script>
+
+</body>
 </html>
 

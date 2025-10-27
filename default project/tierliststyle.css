@@ -16,6 +16,7 @@ img {
   overflow: hidden;
   width: 85%;   
   margin: 0 auto;/* full width of the page */
+  
 }
 
 /* Style the links inside the navigation bar */
@@ -33,7 +34,7 @@ img {
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: palegoldenrod;
-  color: #FFFADA;
+  color: #f3ead3;
 }
 
 /* Add a color to the active/current link */
@@ -49,6 +50,10 @@ img {
   text-align: center;
   font-size: 17px;
   overflow: hidden;
+}
+
+.head-container{
+  position: fixed;
 }
 
 .marquee {
@@ -87,4 +92,71 @@ img {
 
 .right {
   width: 25%;
+}
+    #pokedex {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    
+    }
+    .pokemon-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      width: 80px;
+      height: 10px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5px;
+    }
+
+    .pokemon-card img {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+    }
+
+    .pokemon-card h3 {
+      margin: 10px 0 8px;
+      font-size: 10px;
+      text-transform: capitalize;
+    }
+    .column {
+      background: white;
+      
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      width: 220px;
+    }
+
+    .column h2 {
+      background: #2a75bb;
+      color: #fff;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 18px;
+      margin-top: 0;
+}
+.flex-container {
+    display: flex;
+    padding-top: 3px;
+  border-radius: 6px;
+}
+.flex-child {
+    flex: 1;
+  margin: 4px;
+  padding: 8px;
+  background-color: antiquewhite;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);  
+  
+}  
+
+h2{
+  background-color: chocolate;
+  margin: 5px;
+  border-radius: 6px;
 }
