@@ -29,10 +29,18 @@
       const container = document.getElementById(tier);
       const card = document.createElement("div");
       card.className = "pokemon-card";
+      console.log(pokemon.stats);
 
       card.innerHTML = `
         <img src="${pokemon.sprite}" alt="${pokemon.name}">
         <h3>${pokemon.name}</h3>
+        <div class="hidden-info">
+          <img src="${pokemon.sprite}" alt="${pokemon.name} ">
+          <h1>${pokemon.name} - ${tier}</h1>
+          <p>Type: ${pokemon.types}</p>
+          <p>Ability:<br>${pokemon.abilities}</p>
+          <p>Stats:<br>${pokemon.stats}</p>
+        </div>
       `;
 
       container.appendChild(card);
@@ -42,7 +50,7 @@
 <!DOCTYPE html>
 <html>
   <body onload="loadPokemonList()"> 
-    <div class="head-container" position: fixed;  style= "top: 0; background-color: white; width: 100vw; " >
+    <div class="head-container" position: fixed;  style= "top: 0; background-color: white; width: 100%;" >
     <img src="images/Cubical.png" width = 16% style = "margin: 5px";/>
     
     <div class = "box">
@@ -78,14 +86,14 @@
     </div>
     <div class="topnav" style="border-color: red;">
                                                                                                                                                                                                                   <a  href="index.html">Home</a>
-  <a  href="#news">News</a>
+  <a  href="#news">News</a>  
   <a  href="#contact">Teams</a>
   <a  class="active" style ="color: black;border-radius: 8px;" href="#about">Tier List</a>
   <a  href="#contact">History</a>
 </div>
       </div>
     
-<div class="flex-container" style= "margin-top: 280px;">
+<div class="flex-container" style= "margin-top: 18%; ">
   <div id="20" class="flex-child magenta"><h2>20</h2></div>
   <div id="19" class="flex-child magenta"><h2>19</h2></div>
   <div id="18" class="flex-child magenta"><h2>18</h2></div>

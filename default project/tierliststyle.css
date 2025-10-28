@@ -114,6 +114,10 @@ img {
       margin: 5px;
     }
 
+.pokemon-card:hover {
+  transform: scale(1.05);
+}
+
     .pokemon-card img {
       width: 40px;
       height: 40px;
@@ -160,3 +164,33 @@ h2{
   margin: 5px;
   border-radius: 6px;
 }
+
+h1{
+  margin: 5px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+p{
+  text-transform: capitalize;
+}
+
+.hidden-info {
+  display: none;
+  position: absolute;
+  left: 100%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  width: 150px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.pokemon-card:active .hidden-info {
+  display: block; /* or visibility: visible; */
+}
+
+
