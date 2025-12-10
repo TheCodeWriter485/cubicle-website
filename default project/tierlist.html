@@ -7,7 +7,7 @@
         <!-- UI handling script -->
   <script>
     async function loadPokemonList() {
-      const response = await fetch("team.txt");
+      const response = await fetch("tierlist.txt");
       const text = await response.text();
       const names = text.split(/\r?\n/).filter(line => line.trim() !== "");
       let tier = "20";
@@ -32,7 +32,7 @@
       console.log(pokemon.stats);
 
       card.innerHTML = `
-        <img src="${pokemon.sprite}" alt="${pokemon.name}">
+        <img src="${pokemon.sprite}" alt="${pokemon.name}" >
         <h3>${pokemon.name}</h3>
         <div class="hidden-info">
           <img src="${pokemon.sprite}" alt="${pokemon.name} ">
@@ -51,9 +51,9 @@
 <html>
   <body onload="loadPokemonList()"> 
     <div class="head-container" position: fixed;  style= "top: 0; background-color: white; width: 100%;" >
-    <img src="images/Cubical.png" width = 16% style = "margin: 5px";/>
+    <img src="images/Cubical.png" width = 12% style = "margin: 5px; float: left;";/>
     
-    <div class = "box">
+    <div class = "box" style="margin-top:5.35%;">
   <marquee id="buttonscroll" style="margin-top:10px;" scrollamount="5" scrolldelay="1" loop="infinite" ;="">
       <a href="https://sea-of-colors.neocities.org//index.html"
         ><img src="https://file.garden/Zhv5YDnnzDVjn52y/button.png"
@@ -85,15 +85,15 @@
   </marquee>
     </div>
     <div class="topnav" style="border-color: red;">
-                                                                                                                                                                                                                  <a  href="index.html">Home</a>
+  <a  href="index.html">Home</a>
   <a  href="#news">News</a>  
-  <a  href="#contact">Teams</a>
+  <a  href="teamstart.html">Teams</a>
   <a  class="active" style ="color: black;border-radius: 8px;" href="#about">Tier List</a>
   <a  href="#contact">History</a>
 </div>
       </div>
     
-<div class="flex-container" style= "margin-top: 18%; ">
+<div class="flex-container" style= "margin-top: 11%; ">
   <div id="20" class="flex-child magenta"><h2>20</h2></div>
   <div id="19" class="flex-child magenta"><h2>19</h2></div>
   <div id="18" class="flex-child magenta"><h2>18</h2></div>
